@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns="" xmlns="">
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
     <title>SenMor</title>
-    <script>
-        function and(){
-            document.getElementById('a1').innerText="1";
-        }
-    </script>
 </head>
 <body>
-<text id="t1">你好<br>x + y = <a id="a1" onclick="and()"></a></text>
-<button type="button" onclick="and()">结果</button>
+<div class="gn_box">
+    <h1 style="text-align:center;"><a style="color: #E80017">2</a><a style="color: #D1002E">0</a><a style="color: #BA0045">2</a><a style="color: #A3005C">1</a><a style="color: #8C0073">年</a>
+        <a style="color: #75008A">-</a><a style="color: #5E00A1">元</a><a style="color: #4700B8">旦</a><a style="color: #3000CF">倒</a><a style="color: #1900E6">计</a><a style="color: #0200FD">时</a>
+    </h1>
+        <div style="text-align:center;" id="CountMsg" class="HotDate">
+            <span id="t_d">157 天</span>
+            <span id="t_h">9 时</span>
+            <span id="t_m">7 分</span>
+            <span id="t_s">42 秒</span>
+        </div>
+    <script type="text/javascript"> function getRTime() {
+        const EndTime = new Date('2021/01/01 00:00:00');
+        const NowTime = new Date();
+        const t = EndTime.getTime() - NowTime.getTime();
+        const d = Math.floor(t / 1000 / 60 / 60 / 24);
+        const h = Math.floor(t / 1000 / 60 / 60 % 24);
+        const m = Math.floor(t / 1000 / 60 % 60);
+        const s = Math.floor(t / 1000 % 60);
+        document.getElementById("t_d").innerHTML = d + " 天";
+        document.getElementById("t_h").innerHTML = h + " 时";
+        document.getElementById("t_m").innerHTML = m + " 分";
+        document.getElementById("t_s").innerHTML = s + " 秒";
+    }
+    setInterval(getRTime, 1000);
+    </script>
+</div>
 </body>
 </html>
