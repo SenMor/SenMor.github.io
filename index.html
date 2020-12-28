@@ -5,8 +5,14 @@
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
     <title>SenMor</title>
+    <script>
+        function and(){
+            document.getElementById('a1').innerText="1";
+        }
+    </script>
 </head>
 <body>
-你好！！！
+<text id="t1">你好<br>x + y = <a id="a1" onclick="and()"></a></text>
+<button type="button" onclick="and()">结果</button>
 </body>
 </html>
