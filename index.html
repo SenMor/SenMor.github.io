@@ -5,6 +5,22 @@
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
     <title>SenMor</title>
+    <script type="text/javascript">
+        function getRTime() {
+            const EndTime = new Date('2021/01/01 00:00:00');
+            const NowTime = new Date();
+            const t = EndTime.getTime() - NowTime.getTime();
+            const d = Math.floor(t / 1000 / 60 / 60 / 24);
+            const h = Math.floor(t / 1000 / 60 / 60 % 24);
+            const m = Math.floor(t / 1000 / 60 % 60);
+            const s = Math.floor(t / 1000 % 60);
+            document.getElementById("t_d").innerHTML = d + " 天";
+            document.getElementById("t_h").innerHTML = h + " 时";
+            document.getElementById("t_m").innerHTML = m + " 分";
+            document.getElementById("t_s").innerHTML = s + " 秒";
+        }
+        setInterval(getRTime, 1000);
+    </script>
 </head>
 <body>
 <div class="gn_box">
@@ -12,26 +28,11 @@
         <a style="color: #75008A">-</a><a style="color: #5E00A1">元</a><a style="color: #4700B8">旦</a><a style="color: #3000CF">倒</a><a style="color: #1900E6">计</a><a style="color: #0200FD">时</a>
     </h1>
         <div style="text-align:center;" id="CountMsg" class="HotDate">
-            <span id="t_d">157 天</span>
-            <span id="t_h">9 时</span>
-            <span id="t_m">7 分</span>
-            <span id="t_s">42 秒</span>
+            <span id="t_d"> 天</span>
+            <span id="t_h"> 时</span>
+            <span id="t_m"> 分</span>
+            <span id="t_s"> 秒</span>
         </div>
-    <script type="text/javascript"> function getRTime() {
-        const EndTime = new Date('2021/01/01 00:00:00');
-        const NowTime = new Date();
-        const t = EndTime.getTime() - NowTime.getTime();
-        const d = Math.floor(t / 1000 / 60 / 60 / 24);
-        const h = Math.floor(t / 1000 / 60 / 60 % 24);
-        const m = Math.floor(t / 1000 / 60 % 60);
-        const s = Math.floor(t / 1000 % 60);
-        document.getElementById("t_d").innerHTML = d + " 天";
-        document.getElementById("t_h").innerHTML = h + " 时";
-        document.getElementById("t_m").innerHTML = m + " 分";
-        document.getElementById("t_s").innerHTML = s + " 秒";
-    }
-    setInterval(getRTime, 1000);
-    </script>
 </div>
 </body>
 </html>
